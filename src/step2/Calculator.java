@@ -47,5 +47,30 @@ public class Calculator {
             break; // 연산자 입력 반복문 종료
         } return ope;
     }
+
+    public int secondNum (Scanner scanner, String second, char ope) {
+        int num2;
+        while (true) {
+            System.out.println(second);
+            try {
+                num2 = scanner.nextInt();
+                scanner.nextLine(); // 개행문자 제거
+                if (num2 < 0) {
+                    System.out.println("※ 양의 정수를 입력해주세요.");
+                    continue; // 무한루프 방지
+                }
+            } catch (InputMismatchException e) { // 예외 처리
+                System.out.println("※ 정수를 입력해주세요.");
+                scanner.nextLine(); // 개행문자 제거
+                continue;
+                // 연산자 '/' 입력 시 0 입력 방지
+            }
+            if (ope == '/' && num2 == 0) {
+                System.out.println("※ 0으로 나눌 수 없습니다. 다른 숫자를 입력해주세요.");
+                continue;
+            }
+            break; // 두 번째 숫자 입력 반복문 종료
+        } return num2;
+    }
 }
 
