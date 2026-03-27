@@ -31,13 +31,14 @@ public class Calculator {
         } return num1;
     }
 
+    // 연산자 입력 메서드
     public char ope (Scanner scanner, String operator) {
-        char ope;
+        char ope2;
         while (true) {
             System.out.println(operator);
-            ope = scanner.next().charAt(0); // ope 입력받기
+            ope2 = scanner.next().charAt(0); // ope 입력받기
             // 사칙연산 외 다른문자 입력 시 문구 출력
-            switch (ope) {
+            switch (ope2) {
                 case '+', '-', '*', '/':
                     break;
                 default:
@@ -45,9 +46,10 @@ public class Calculator {
                     continue;
             }
             break; // 연산자 입력 반복문 종료
-        } return ope;
+        } return ope2;
     }
 
+    // 두 번째 숫자 입력 메서드
     public int secondNum (Scanner scanner, String second, char ope) {
         int num2;
         while (true) {
@@ -73,6 +75,7 @@ public class Calculator {
         } return num2;
     }
 
+    // 계산 메서드
     public int cacaulate(int num1, char ope, int num2) {
         int result = 0;
         switch (ope) {
@@ -95,6 +98,28 @@ public class Calculator {
         }
         resultList.add(result);
         return result;
+    }
+    public String answer(Scanner scanner, String answer2) {
+        String ans;
+        while (true) {
+            System.out.println(answer2);
+            ans = scanner.nextLine(); // ope 입력받기
+            // 사칙연산 외 다른문자 입력 시 문구 출력
+            switch (ans) {
+                case "yes":
+                    System.out.println("< 계산을 다시 시작합니다. >");
+                    break;
+                case "menu":
+                    System.out.println("< 메뉴로 돌아갑니다. >");
+                    return "menu";
+                case "exit":
+                    System.out.println("< 프로그램을 종료합니다. >");
+                    System.exit(0);
+                default:
+                    System.out.println("※ 잘못 입력하셨습니다.");
+                    continue;
+            } break; // 연산자 입력 반복문 종료
+        } return ans;
     }
 }
 
