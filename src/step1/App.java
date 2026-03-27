@@ -47,12 +47,27 @@ public class App {
                     break; // 연산자 입력 반복문 종료
                     }
 
-
-
+            int num2; // 두 번째 숫자 담을 변수 선언
+            // 두 번째 숫자 입력 반복문
+            while (true) {
+                System.out.println("두 번째 숫자를 입력해주세요.: ");
+                try {
+                    num2 = scanner.nextInt();
+                    scanner.nextLine(); // 개행문자 제거
+                    if (num2 < 0) {
+                        System.out.println("양의 정수를 입력해주세요.");
+                        break; // 무한루프 방지
                     }
-
+                } catch (InputMismatchException e) { // 예외 처리
+                    System.out.println("정수를 입력해주세요.");
+                    scanner.nextLine(); // 개행문자 제거
+                    continue;
                 }
-            }
+                break; // 두 번째 숫자 입력 반복문 종료
+            } break; // 전체 반복문 종료
+        }
+    }
+}
 
 
 
