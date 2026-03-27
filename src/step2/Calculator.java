@@ -30,4 +30,22 @@ public class Calculator {
             break; // 첫 번째 숫자 입력 반복문 종료
         } return num1;
     }
+
+    public char ope (Scanner scanner, String operator) {
+        char ope;
+        while (true) {
+            System.out.println(operator);
+            ope = scanner.next().charAt(0); // ope 입력받기
+            // 사칙연산 외 다른문자 입력 시 문구 출력
+            switch (ope) {
+                case '+', '-', '*', '/':
+                    break;
+                default:
+                    System.out.println("※ 사칙연산 중 하나를 입력해주세요.");
+                    continue;
+            }
+            break; // 연산자 입력 반복문 종료
+        } return ope;
+    }
 }
+
