@@ -72,5 +72,29 @@ public class Calculator {
             break; // 두 번째 숫자 입력 반복문 종료
         } return num2;
     }
+
+    public int cacaulate(int num1, char ope, int num2) {
+        int result = 0;
+        switch (ope) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("::: " + num1 + " + " + num2 + " = " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("::: " + num1 + " - " + num2 + " = " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("::: " + num1 + " * " + num2 + " = " + result);
+                break;
+            case '/':
+                result = num1 / num2;
+                System.out.println("::: " + num1 + " / " + num2 + " = " + result);
+                break;
+        }
+        resultList.add(result);
+        return result;
+    }
 }
 

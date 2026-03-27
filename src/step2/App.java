@@ -24,10 +24,8 @@ public class App {
                 int num1 = calculator.firstNum(scanner, "- 첫 번째 숫자를 입력해주세요.: ");
                 char ope = calculator.ope(scanner, "- 연산자(+, -, *, /)를 입력해주세요.: ");
                 int num2 = calculator.secondNum(scanner, "- 두 번째 숫자를 입력해주세요.: ", ope);
-
+                int result = calculator.cacaulate(num1, ope, num2);
             }
-
         }
-
     }
 }
