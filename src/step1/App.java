@@ -61,6 +61,10 @@ public class App {
                 } catch (InputMismatchException e) { // 예외 처리
                     System.out.println("정수를 입력해주세요.");
                     scanner.nextLine(); // 개행문자 제거
+                    break;
+                    // 연산자 '/' 입력 시 0 입력 방지
+                } if (ope == '/' && num2 == 0) {
+                    System.out.println("0으로 나눌 수 없습니다. 다른 숫자를 입력해주세요.");
                     continue;
                 }
                 break; // 두 번째 숫자 입력 반복문 종료
