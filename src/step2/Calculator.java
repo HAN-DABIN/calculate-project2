@@ -121,5 +121,29 @@ public class Calculator {
             } break; // 연산자 입력 반복문 종료
         } return ans;
     }
+    // getter
+    public ArrayList<Integer> getResultList() {
+        return this.resultList;
+    }
+
+    public String goMenu(Scanner scanner, String goMenu2) {
+        String gM;
+        while (true) {
+            System.out.println(goMenu2);
+            scanner.nextLine(); // 개행문자 제거 => 전 입력이 String이었는데 왜 생겼을까? * 트러블슈팅
+            gM = scanner.nextLine();
+            switch (gM) {
+                case "yes":
+                    System.out.println("< 메뉴로 돌아갑니다. >");
+                    break;
+                case "exit":
+                    System.out.println("< 프로그램을 종료합니다. >");
+                    System.exit(0);
+                default:
+                    System.out.println("※ 잘못 입력하셨습니다.");
+                    continue;
+            } break;
+        } return gM;
+    }
 }
 
