@@ -18,7 +18,7 @@ public class Calculator {
                 // num1에 입력 값 저장
                 num1 = scanner.nextInt(); // num1 입력 받기
                 scanner.nextLine(); // 개행문자 제거
-                if (num1 < 0) { // 입력한 숫자가 음의 정수일 때 문장 출력
+                if (num1 <= 0) { // 입력한 숫자가 음의 정수일 때 문장 출력
                     System.out.println("※ 양의 정수를 입력해주세요.");
                     continue; // 무한루프 방지
                 }
@@ -57,7 +57,7 @@ public class Calculator {
             try {
                 num2 = scanner.nextInt();
                 scanner.nextLine(); // 개행문자 제거
-                if (num2 < 0) {
+                if (num2 <= 0) {
                     System.out.println("※ 양의 정수를 입력해주세요.");
                     continue; // 무한루프 방지
                 }
@@ -104,8 +104,8 @@ public class Calculator {
         String ans;
         while (true) {
             System.out.println(answer2);
-            ans = scanner.nextLine(); // ope 입력받기
-            // 사칙연산 외 다른문자 입력 시 문구 출력
+            ans = scanner.nextLine(); // 입력받기
+            // 다른문자 입력 시 문구 출력
             switch (ans) {
                 case "yes":
                     System.out.println("< 계산을 다시 시작합니다. >");
@@ -124,7 +124,8 @@ public class Calculator {
     }
     // getter
     public ArrayList<Integer> getResultList() {
-        return this.resultList;
+        // 얕은 복사
+        return new ArrayList<>(resultList);
     }
     // 메뉴 복귀 메서드 (기능)
     public String goMenu(Scanner scanner, String goMenu2) {

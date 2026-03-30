@@ -19,7 +19,7 @@ public class App {
                 try {
                     num1 = scanner.nextInt(); // num1 입력 받기
                     scanner.nextLine(); // 개행문자 제거
-                    if (num1 < 0) { // 입력한 숫자가 음의 정수일 때 문장 출력
+                    if (num1 <= 0) { // 입력한 숫자가 음의 정수일 때 문장 출력
                         System.out.println("※ 양의 정수를 입력해주세요.");
                         continue; // 무한루프 방지
                     }
@@ -54,7 +54,7 @@ public class App {
                 try {
                     num2 = scanner.nextInt();
                     scanner.nextLine(); // 개행문자 제거
-                    if (num2 < 0) {
+                    if (num2 <= 0) {
                         System.out.println("※ 양의 정수를 입력해주세요.");
                         continue; // 무한루프 방지
                     }

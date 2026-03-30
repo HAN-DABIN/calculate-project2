@@ -30,7 +30,7 @@ public class App {
                         int num1 = calculator.firstNum(scanner, "- 첫 번째 숫자를 입력해주세요.: ");
                         char ope = calculator.ope(scanner, "- 연산자(+, -, *, /)를 입력해주세요.: ");
                         int num2 = calculator.secondNum(scanner, "- 두 번째 숫자를 입력해주세요.: ", ope);
-                        int result = calculator.calculate(num1, ope, num2);
+                        calculator.calculate(num1, ope, num2);
                         String ans = calculator.answer(scanner, "- 다시 계산하시겠습니까? (yes: 다시계산 / menu: 메뉴로 돌아가기 / exit: 계산기 종료)");
 
                         // ans의 입력값이 "menu"라면 계산하기 반복문 종료
