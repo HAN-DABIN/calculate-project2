@@ -39,4 +39,24 @@ public class Menu {
             } break;
         } return ans;
     }
+    public String goMenu(Scanner scanner) {
+        String gM;
+        // 메뉴 입력 반복문
+        while (true) {
+            // 메뉴로 돌아가는 입력 받기
+            System.out.println("- 메뉴로 돌아가시겠습니까? (yes: 메뉴로 돌아가기 / exit: 계산기 종료)");
+            gM = scanner.nextLine();
+            switch (gM) {
+                case "yes":
+                    System.out.println("< 메뉴로 돌아갑니다. >");
+                    break;
+                case "exit":
+                    System.out.println("< 프로그램을 종료합니다. >");
+                    System.exit(0);
+                default:
+                    System.out.println("※ 잘못 입력하셨습니다.");
+                    continue;
+            } break;
+        } return gM;
+    }
 }

@@ -42,5 +42,19 @@ public class ArithmeticCalculator<T extends Number> {
             resultList.add(result);
             return result;
     }
+    // getter
+    public ArrayList<Double> getResultList() {
+        // 얕은 복사
+        return new ArrayList<>(resultList);
+    }
+    // 첫 번째 계산 기록 (0번째 인덱스) 삭제 메서드 (기능)
+    public void removeResult() {
+        if (!resultList.isEmpty()) {
+            resultList.remove(0);
+            System.out.println("변경 계산 기록: " + resultList);
+        } else {
+            System.out.println("※ 삭제할 결과가 없습니다.");
+        }
+    }
 }
 
