@@ -39,6 +39,7 @@ public class Menu {
             } break;
         } return ans;
     }
+
     public String goMenu(Scanner scanner) {
         String gM;
         // 메뉴 입력 반복문
