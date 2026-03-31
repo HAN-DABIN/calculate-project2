@@ -56,4 +56,18 @@ public class InputNumber {
             }
         }
     }
+    public double getBiggerNumber() {
+        double userValue;
+        while (true) {
+            try {
+                System.out.println("- 비교할 숫자를 입력해주세요.");
+                userValue = scanner.nextDouble();
+                scanner.nextLine();
+                return userValue;
+            } catch (InputMismatchException e) {
+                System.out.println("※ 숫자로 입력해주세요.");
+                scanner.nextLine();
+            }
+        }
+    }
 }

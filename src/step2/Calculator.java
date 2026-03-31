@@ -134,7 +134,7 @@ public class Calculator {
         while (true) {
             // 메뉴로 돌아가는 입력 받기
             System.out.println(goMenu2);
-            scanner.nextLine(); // 개행문자 제거 => 전 입력이 String이었는데 왜 생겼을까? * 트러블슈팅
+            scanner.nextLine(); // 개행문자 제거 => 전 입력이 String이었는데 왜 생겼을까? * 트러블슈팅 = menu입력 시 int였으니까!!!!
             gM = scanner.nextLine();
             switch (gM) {
                 case "yes":

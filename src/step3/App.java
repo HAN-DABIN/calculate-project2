@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        // 객체화
         ArithmeticCalculator<Double> cal = new ArithmeticCalculator<>();
         Menu menu = new Menu();
         InputNumber input = new InputNumber();
@@ -41,20 +42,26 @@ public class App {
                 } else {
                     break;
                 }
-            }
-            if (select == 2) {
+            } if (select == 2) {
                 System.out.println("=== 계산 결과를 조회합니다 ===");
                 ArrayList<Double> resultList = cal.getResultList();
                 System.out.println("계산 결과: " + resultList);
                 menu.goMenu(scanner);
             }
             if (select == 3) {
-                System.out.println("=== 첫 번째 계산 기록을 삭제합니다.===");
+                System.out.println("=== 첫 번째 계산 기록을 삭제합니다. ===");
                 // getter 활용
                 ArrayList<Double> resultList = cal.getResultList();
                 System.out.println("기존 계산 기록: " + resultList);
                 // removeResult 메서드 호출
                 cal.removeResult();
+                menu.goMenu(scanner);
+            }
+            if (select == 4) {
+                System.out.println("=== 입력하신 숫자보다 큰 숫자를 조회합니다. ===");
+                double userValue = input.getBiggerNumber();
+                // 매개변수 전달
+                cal.bigger(userValue);
                 menu.goMenu(scanner);
             }
         }

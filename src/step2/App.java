@@ -38,15 +38,13 @@ public class App {
                             break;
                         }
                     }
-                }
-                if (select == 2) {
+                } else if (select == 2) {
                     System.out.println("=== 계산 결과를 조회합니다 ===");
                     // getter 활용
                     ArrayList<Integer> resultList = calculator.getResultList();
                     System.out.println("계산 결과: " + resultList);
                     String gM = calculator.goMenu(scanner, "- 메뉴로 돌아가시겠습니까? (yes: 메뉴로 돌아가기 / exit: 계산기 종료)");
-                }
-                if (select == 3) {
+                } else if (select == 3) {
                     System.out.println("=== 첫 번째 계산 기록을 삭제합니다.===");
                     // getter 활용
                     ArrayList<Integer> resultList = calculator.getResultList();
@@ -54,8 +52,7 @@ public class App {
                     // removeResult 메서드 호출
                     calculator.removeResult();
                     String gM = calculator.goMenu(scanner, "- 메뉴로 돌아가시겠습니까? (yes: 메뉴로 돌아가기 / exit: 계산기 종료)");
-                }
-                if (select == 0) {
+                } else if (select == 0) {
                     System.out.println("=== 프로그램을 종료합니다. ===");
                     System.exit(0);
                 } else {
